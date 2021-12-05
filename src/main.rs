@@ -1,11 +1,13 @@
-use ferris_says::say;
-use std::io::{stdout, BufWriter};
+// use std::env;
+use std::fs;
 
 fn main() {
-    let stdout = stdout();
-    let message = String::from("Hello fellow Rustaceans!");
-    let width = message.chars().count();
+    let contents = fs::read_to_string("input.txt")
+        .expect("Something went wrong");
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
+    let mut x = 0;
+    for num in contents.chars() {
+        println!("{}", num);
+        x = x + 1;
+    }
 }
