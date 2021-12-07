@@ -2,12 +2,16 @@
 use std::fs;
 
 fn main() {
-    let contents = fs::read_to_string("input.txt")
+    let contents: String = fs::read_to_string("input.txt")
         .expect("Something went wrong");
 
-    let mut x = 0;
+    let mut x: i32 = 0;
     for num in contents.chars() {
         println!("{}", num);
         x = x + 1;
     }
+}
+
+fn test_function() {
+    println!("This is the test function");
 }
